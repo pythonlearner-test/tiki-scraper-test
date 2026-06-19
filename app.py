@@ -11,7 +11,7 @@ st.write("Ứng dụng giúp lấy dữ liệu sản phẩm từ gian hàng Tiki
 
 # Giao diện nhập liệu
 keyword = st.text_input("Nhập từ khóa sản phẩm muốn tìm:", "Vinamilk")
-pages = st.number_input("Số lượng trang muốn cào (Mỗi trang tối đa 40 SP):", min_value=1, max_value=10, value=3)
+pages = st.number_input("Số lượng trang muốn cào (Mỗi trang tối đa 40 SP):", min_value=1, max_value=100, value=5)
 
 if st.button("🚀 Bắt đầu cào dữ liệu"):
     headers = {
@@ -73,7 +73,7 @@ if st.button("🚀 Bắt đầu cào dữ liệu"):
             break
             
         progress_bar.progress(page / pages)
-        time.sleep(1)
+        time.sleep(2)
         
     status_text.text("Quá trình cào hoàn tất!")
     
